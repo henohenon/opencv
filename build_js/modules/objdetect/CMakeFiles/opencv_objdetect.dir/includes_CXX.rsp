@@ -1,0 +1,1 @@
+-I/src/build_js -I/src/modules/objdetect/include -I/src/build_js/modules/objdetect -I/src/modules/core/include -I/src/modules/flann/include -I/src/modules/imgproc/include -I/src/modules/dnn/include -I/src/modules/features2d/include -I/src/modules/calib3d/include

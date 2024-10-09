@@ -1,0 +1,1 @@
+-I/src/build_js -I/src/modules/imgproc/include -I/src/build_js/modules/imgproc -I/src/modules/core/include

@@ -1,0 +1,1 @@
+-I/src/build_js -I/src/modules/dnn/include -I/src/build_js/modules/dnn -I/src/modules/core/include -I/src/modules/imgproc/include -I/src/modules/dnn/misc/caffe -I/src/modules/dnn/misc/tensorflow -I/src/modules/dnn/misc/onnx -I/src/modules/dnn/misc/tflite -isystem /src/3rdparty/flatbuffers/include -isystem /src/3rdparty/protobuf/src
