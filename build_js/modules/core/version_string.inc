@@ -1,6 +1,6 @@
 "\n"
 "General configuration for OpenCV 4.10.0-dev =====================================\n"
-"  Version control:               a66755dcdc\n"
+"  Version control:               4.10.0-313-gb5d2633c8a\n"
 "\n"
 "  Platform:\n"
 "    Timestamp:                   2024-10-09T02:58:59Z\n"
