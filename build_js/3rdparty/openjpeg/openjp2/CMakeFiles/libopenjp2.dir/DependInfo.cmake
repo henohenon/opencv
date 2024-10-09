@@ -1,35 +1,45 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "C"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_C
+  "/src/3rdparty/openjpeg/openjp2/bio.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/bio.c.o"
+  "/src/3rdparty/openjpeg/openjp2/cio.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/cio.c.o"
+  "/src/3rdparty/openjpeg/openjp2/dwt.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/dwt.c.o"
+  "/src/3rdparty/openjpeg/openjp2/event.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/event.c.o"
+  "/src/3rdparty/openjpeg/openjp2/function_list.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/function_list.c.o"
+  "/src/3rdparty/openjpeg/openjp2/ht_dec.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/ht_dec.c.o"
+  "/src/3rdparty/openjpeg/openjp2/image.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/image.c.o"
+  "/src/3rdparty/openjpeg/openjp2/invert.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/invert.c.o"
+  "/src/3rdparty/openjpeg/openjp2/j2k.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/j2k.c.o"
+  "/src/3rdparty/openjpeg/openjp2/jp2.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/jp2.c.o"
+  "/src/3rdparty/openjpeg/openjp2/mct.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/mct.c.o"
+  "/src/3rdparty/openjpeg/openjp2/mqc.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/mqc.c.o"
+  "/src/3rdparty/openjpeg/openjp2/openjpeg.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/openjpeg.c.o"
+  "/src/3rdparty/openjpeg/openjp2/opj_clock.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/opj_clock.c.o"
+  "/src/3rdparty/openjpeg/openjp2/opj_malloc.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/opj_malloc.c.o"
+  "/src/3rdparty/openjpeg/openjp2/pi.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/pi.c.o"
+  "/src/3rdparty/openjpeg/openjp2/sparse_array.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/sparse_array.c.o"
+  "/src/3rdparty/openjpeg/openjp2/t1.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/t1.c.o"
+  "/src/3rdparty/openjpeg/openjp2/t2.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/t2.c.o"
+  "/src/3rdparty/openjpeg/openjp2/tcd.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/tcd.c.o"
+  "/src/3rdparty/openjpeg/openjp2/tgt.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/tgt.c.o"
+  "/src/3rdparty/openjpeg/openjp2/thread.c" "/src/build_js/3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/thread.c.o"
+  )
+set(CMAKE_C_COMPILER_ID "Clang")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_C
+  "MUTEX_pthread"
+  "OPJ_STATIC"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/src/3rdparty/openjpeg/openjp2/bio.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/bio.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/bio.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/cio.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/cio.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/cio.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/dwt.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/dwt.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/dwt.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/event.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/event.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/event.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/function_list.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/function_list.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/function_list.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/ht_dec.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/ht_dec.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/ht_dec.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/image.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/image.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/image.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/invert.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/invert.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/invert.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/j2k.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/j2k.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/j2k.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/jp2.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/jp2.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/jp2.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/mct.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/mct.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/mct.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/mqc.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/mqc.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/mqc.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/openjpeg.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/openjpeg.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/openjpeg.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/opj_clock.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/opj_clock.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/opj_clock.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/opj_malloc.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/opj_malloc.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/opj_malloc.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/pi.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/pi.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/pi.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/sparse_array.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/sparse_array.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/sparse_array.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/t1.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/t1.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/t1.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/t2.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/t2.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/t2.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/tcd.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/tcd.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/tcd.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/tgt.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/tgt.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/tgt.c.o.d"
-  "/src/3rdparty/openjpeg/openjp2/thread.c" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/thread.c.o" "gcc" "3rdparty/openjpeg/openjp2/CMakeFiles/libopenjp2.dir/thread.c.o.d"
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  "3rdparty/openjpeg/openjp2"
+  "../3rdparty/openjpeg/openjp2"
+  "."
   )
 
 # Targets to which this target links.

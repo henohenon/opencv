@@ -1,1 +1,1 @@
--I/src/build_js -I/src/modules/photo/include -I/src/build_js/modules/photo -I/src/modules/core/include -I/src/modules/imgproc/include
+-I/src/build_js -I/src/modules/photo/include -I/src/build_js/modules/photo -I/src/modules/core/include -I/src/modules/imgproc/include 

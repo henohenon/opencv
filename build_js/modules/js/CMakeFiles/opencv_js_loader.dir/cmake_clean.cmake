@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../bin/opencv.js"
   "CMakeFiles/opencv_js_loader"
+  "../../bin/opencv.js"
 )
 
 # Per-language clean rules from dependency scanning.

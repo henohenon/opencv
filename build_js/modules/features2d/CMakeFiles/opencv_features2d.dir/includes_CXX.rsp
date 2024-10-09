@@ -1,1 +1,1 @@
--I/src/build_js -I/src/modules/features2d/include -I/src/build_js/modules/features2d -I/src/modules/core/include -I/src/modules/flann/include -I/src/modules/imgproc/include
+-I/src/build_js -I/src/modules/features2d/include -I/src/build_js/modules/features2d -I/src/modules/core/include -I/src/modules/flann/include -I/src/modules/imgproc/include 

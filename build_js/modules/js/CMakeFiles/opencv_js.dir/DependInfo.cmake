@@ -1,14 +1,36 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/src/build_js/modules/js_bindings_generator/gen/bindings.cpp" "/src/build_js/modules/js/CMakeFiles/opencv_js.dir/__/js_bindings_generator/gen/bindings.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "Clang")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "_USE_MATH_DEFINES"
+  "__STDC_CONSTANT_MACROS"
+  "__STDC_FORMAT_MACROS"
+  "__STDC_LIMIT_MACROS"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/src/build_js/modules/js_bindings_generator/gen/bindings.cpp" "modules/js/CMakeFiles/opencv_js.dir/__/js_bindings_generator/gen/bindings.cpp.o" "gcc" "modules/js/CMakeFiles/opencv_js.dir/__/js_bindings_generator/gen/bindings.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "."
+  "../modules/js/include"
+  "modules/js"
+  "../modules/core/include"
+  "../modules/flann/include"
+  "../modules/imgproc/include"
+  "../modules/photo/include"
+  "../modules/dnn/include"
+  "../modules/features2d/include"
+  "../modules/calib3d/include"
+  "../modules/objdetect/include"
+  "../modules/video/include"
+  "/emsdk/upstream/emscripten/system/include"
   )
 
 # Targets to which this target links.

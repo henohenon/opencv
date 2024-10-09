@@ -1,15 +1,29 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/src/modules/flann/src/flann.cpp" "/src/build_js/modules/flann/CMakeFiles/opencv_flann.dir/src/flann.cpp.o"
+  "/src/modules/flann/src/miniflann.cpp" "/src/build_js/modules/flann/CMakeFiles/opencv_flann.dir/src/miniflann.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "Clang")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "_USE_MATH_DEFINES"
+  "__OPENCV_BUILD=1"
+  "__STDC_CONSTANT_MACROS"
+  "__STDC_FORMAT_MACROS"
+  "__STDC_LIMIT_MACROS"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/src/modules/flann/src/flann.cpp" "modules/flann/CMakeFiles/opencv_flann.dir/src/flann.cpp.o" "gcc" "modules/flann/CMakeFiles/opencv_flann.dir/src/flann.cpp.o.d"
-  "/src/modules/flann/src/miniflann.cpp" "modules/flann/CMakeFiles/opencv_flann.dir/src/miniflann.cpp.o" "gcc" "modules/flann/CMakeFiles/opencv_flann.dir/src/miniflann.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "."
+  "../modules/flann/include"
+  "modules/flann"
+  "../modules/core/include"
   )
 
 # Targets to which this target links.

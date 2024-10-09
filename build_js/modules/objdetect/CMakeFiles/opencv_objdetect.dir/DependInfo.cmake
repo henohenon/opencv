@@ -1,40 +1,59 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/src/build_js/modules/objdetect/opencl_kernels_objdetect.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/opencl_kernels_objdetect.cpp.o"
+  "/src/modules/objdetect/src/aruco/apriltag/apriltag_quad_thresh.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/apriltag_quad_thresh.cpp.o"
+  "/src/modules/objdetect/src/aruco/apriltag/zmaxheap.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/zmaxheap.cpp.o"
+  "/src/modules/objdetect/src/aruco/aruco_board.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_board.cpp.o"
+  "/src/modules/objdetect/src/aruco/aruco_detector.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_detector.cpp.o"
+  "/src/modules/objdetect/src/aruco/aruco_dictionary.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_dictionary.cpp.o"
+  "/src/modules/objdetect/src/aruco/aruco_utils.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_utils.cpp.o"
+  "/src/modules/objdetect/src/aruco/charuco_detector.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/charuco_detector.cpp.o"
+  "/src/modules/objdetect/src/barcode.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/abs_decoder.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/abs_decoder.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/common/hybrid_binarizer.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/hybrid_binarizer.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/common/super_scale.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/super_scale.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/common/utils.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/utils.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/ean13_decoder.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/ean13_decoder.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/ean8_decoder.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/ean8_decoder.cpp.o"
+  "/src/modules/objdetect/src/barcode_decoder/upcean_decoder.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/upcean_decoder.cpp.o"
+  "/src/modules/objdetect/src/barcode_detector/bardetect.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_detector/bardetect.cpp.o"
+  "/src/modules/objdetect/src/cascadedetect.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/cascadedetect.cpp.o"
+  "/src/modules/objdetect/src/cascadedetect_convert.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/cascadedetect_convert.cpp.o"
+  "/src/modules/objdetect/src/detection_based_tracker.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/detection_based_tracker.cpp.o"
+  "/src/modules/objdetect/src/face_detect.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/face_detect.cpp.o"
+  "/src/modules/objdetect/src/face_recognize.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/face_recognize.cpp.o"
+  "/src/modules/objdetect/src/graphical_code_detector.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/graphical_code_detector.cpp.o"
+  "/src/modules/objdetect/src/hog.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/hog.cpp.o"
+  "/src/modules/objdetect/src/main.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/main.cpp.o"
+  "/src/modules/objdetect/src/qrcode.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/qrcode.cpp.o"
+  "/src/modules/objdetect/src/qrcode_encoder.cpp" "/src/build_js/modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/qrcode_encoder.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "Clang")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "_USE_MATH_DEFINES"
+  "__OPENCV_BUILD=1"
+  "__STDC_CONSTANT_MACROS"
+  "__STDC_FORMAT_MACROS"
+  "__STDC_LIMIT_MACROS"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/src/build_js/modules/objdetect/opencl_kernels_objdetect.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/opencl_kernels_objdetect.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/opencl_kernels_objdetect.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/apriltag/apriltag_quad_thresh.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/apriltag_quad_thresh.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/apriltag_quad_thresh.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/apriltag/zmaxheap.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/zmaxheap.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/zmaxheap.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/aruco_board.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_board.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_board.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/aruco_detector.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_detector.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_detector.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/aruco_dictionary.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_dictionary.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_dictionary.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/aruco_utils.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_utils.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/aruco_utils.cpp.o.d"
-  "/src/modules/objdetect/src/aruco/charuco_detector.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/charuco_detector.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/aruco/charuco_detector.cpp.o.d"
-  "/src/modules/objdetect/src/barcode.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/abs_decoder.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/abs_decoder.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/abs_decoder.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/common/hybrid_binarizer.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/hybrid_binarizer.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/hybrid_binarizer.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/common/super_scale.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/super_scale.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/super_scale.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/common/utils.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/utils.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/common/utils.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/ean13_decoder.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/ean13_decoder.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/ean13_decoder.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/ean8_decoder.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/ean8_decoder.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/ean8_decoder.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_decoder/upcean_decoder.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/upcean_decoder.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_decoder/upcean_decoder.cpp.o.d"
-  "/src/modules/objdetect/src/barcode_detector/bardetect.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_detector/bardetect.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/barcode_detector/bardetect.cpp.o.d"
-  "/src/modules/objdetect/src/cascadedetect.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/cascadedetect.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/cascadedetect.cpp.o.d"
-  "/src/modules/objdetect/src/cascadedetect_convert.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/cascadedetect_convert.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/cascadedetect_convert.cpp.o.d"
-  "/src/modules/objdetect/src/detection_based_tracker.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/detection_based_tracker.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/detection_based_tracker.cpp.o.d"
-  "/src/modules/objdetect/src/face_detect.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/face_detect.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/face_detect.cpp.o.d"
-  "/src/modules/objdetect/src/face_recognize.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/face_recognize.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/face_recognize.cpp.o.d"
-  "/src/modules/objdetect/src/graphical_code_detector.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/graphical_code_detector.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/graphical_code_detector.cpp.o.d"
-  "/src/modules/objdetect/src/hog.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/hog.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/hog.cpp.o.d"
-  "/src/modules/objdetect/src/main.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/main.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/main.cpp.o.d"
-  "/src/modules/objdetect/src/qrcode.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/qrcode.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/qrcode.cpp.o.d"
-  "/src/modules/objdetect/src/qrcode_encoder.cpp" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/qrcode_encoder.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_objdetect.dir/src/qrcode_encoder.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "."
+  "../modules/objdetect/include"
+  "modules/objdetect"
+  "../modules/core/include"
+  "../modules/flann/include"
+  "../modules/imgproc/include"
+  "../modules/dnn/include"
+  "../modules/features2d/include"
+  "../modules/calib3d/include"
   )
 
 # Targets to which this target links.

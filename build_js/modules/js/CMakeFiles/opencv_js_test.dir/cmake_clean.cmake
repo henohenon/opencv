@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "../../bin/.eslintrc.json"
-  "../../bin/haarcascade_frontalface_default.xml"
-  "../../bin/init_cv.js"
+  "CMakeFiles/opencv_js_test"
   "../../bin/opencv.js"
+  "../../bin/.eslintrc.json"
+  "../../bin/init_cv.js"
   "../../bin/package.json"
   "../../bin/run_puppeteer.js"
   "../../bin/test_calib3d.js"
@@ -16,7 +16,7 @@ file(REMOVE_RECURSE
   "../../bin/test_video.js"
   "../../bin/tests.html"
   "../../bin/tests.js"
-  "CMakeFiles/opencv_js_test"
+  "../../bin/haarcascade_frontalface_default.xml"
 )
 
 # Per-language clean rules from dependency scanning.

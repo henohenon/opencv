@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/opencv_js_perf"
   "../../bin/opencv.js"
   "../../bin/perf/README.md"
   "../../bin/perf/base.js"
@@ -36,7 +37,6 @@ file(REMOVE_RECURSE
   "../../bin/perf/perf_imgproc/perf_warpAffine.js"
   "../../bin/perf/perf_imgproc/perf_warpPerspective.html"
   "../../bin/perf/perf_imgproc/perf_warpPerspective.js"
-  "CMakeFiles/opencv_js_perf"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../CMakeFiles/dephelper/gen_opencv_java_source"
   "CMakeFiles/gen_opencv_java_source"
+  "../../CMakeFiles/dephelper/gen_opencv_java_source"
 )
 
 # Per-language clean rules from dependency scanning.

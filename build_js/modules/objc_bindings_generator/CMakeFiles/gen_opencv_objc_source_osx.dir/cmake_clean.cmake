@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../CMakeFiles/dephelper/gen_opencv_objc_source_osx"
   "CMakeFiles/gen_opencv_objc_source_osx"
+  "../../CMakeFiles/dephelper/gen_opencv_objc_source_osx"
 )
 
 # Per-language clean rules from dependency scanning.

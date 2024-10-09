@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "../../bin/opencv_js.js"
-  "../../bin/opencv_js.pdb"
   "CMakeFiles/opencv_js.dir/__/js_bindings_generator/gen/bindings.cpp.o"
-  "CMakeFiles/opencv_js.dir/__/js_bindings_generator/gen/bindings.cpp.o.d"
+  "../../bin/opencv_js.pdb"
+  "../../bin/opencv_js.js"
 )
 
 # Per-language clean rules from dependency scanning.

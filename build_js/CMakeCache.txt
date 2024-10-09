@@ -190,8 +190,8 @@ BUILD_opencv_world:BOOL=OFF
 //Path to a program.
 CCACHE_PROGRAM:FILEPATH=CCACHE_PROGRAM-NOTFOUND
 
-//Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
+//Emscripten ar
+CMAKE_AR:FILEPATH=/emsdk/upstream/emscripten/emar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -204,7 +204,16 @@ CMAKE_COLOR_MAKEFILE:BOOL=ON
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release
 
 //Path to the emulator for the target system.
-CMAKE_CROSSCOMPILING_EMULATOR:FILEPATH=/emsdk/node/18.20.3_64bit/bin/node
+CMAKE_CROSSCOMPILING_EMULATOR:FILEPATH=/emsdk/node/12.18.1_64bit/bin/node
+
+//Emscripten em++
+CMAKE_CXX_COMPILER:FILEPATH=/emsdk/upstream/emscripten/em++
+
+//Emscripten ar
+CMAKE_CXX_COMPILER_AR:FILEPATH=/emsdk/upstream/emscripten/emar
+
+//Emscripten ranlib
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/emsdk/upstream/emscripten/emranlib
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=-s SINGLE_FILE=1 -s USE_PTHREADS=0 -s EXPORTED_FUNCTIONS="['_malloc', '_free']"
@@ -212,14 +221,23 @@ CMAKE_CXX_FLAGS:STRING=-s SINGLE_FILE=1 -s USE_PTHREADS=0 -s EXPORTED_FUNCTIONS=
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
-//Flags used by the CXX compiler during MINSIZEREL builds.
-CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+//Emscripten-overridden CMAKE_CXX_FLAGS_MINSIZEREL
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-DNDEBUG -Os
 
-//Flags used by the CXX compiler during RELEASE builds.
-CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+//Emscripten-overridden CMAKE_CXX_FLAGS_RELEASE
+CMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG -O2
 
-//Flags used by the CXX compiler during RELWITHDEBINFO builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+//Emscripten-overridden CMAKE_CXX_FLAGS_RELWITHDEBINFO
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-DNDEBUG -O2
+
+//Emscripten emcc
+CMAKE_C_COMPILER:FILEPATH=/emsdk/upstream/emscripten/emcc
+
+//Emscripten ar
+CMAKE_C_COMPILER_AR:FILEPATH=/emsdk/upstream/emscripten/emar
+
+//Emscripten ranlib
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/emsdk/upstream/emscripten/emranlib
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=-s SINGLE_FILE=1 -s USE_PTHREADS=0 -s EXPORTED_FUNCTIONS="['_malloc', '_free']"
@@ -227,17 +245,14 @@ CMAKE_C_FLAGS:STRING=-s SINGLE_FILE=1 -s USE_PTHREADS=0 -s EXPORTED_FUNCTIONS="[
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-g
 
-//Flags used by the C compiler during MINSIZEREL builds.
-CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+//Emscripten-overridden CMAKE_C_FLAGS_MINSIZEREL
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-DNDEBUG -Os
 
-//Flags used by the C compiler during RELEASE builds.
-CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+//Emscripten-overridden CMAKE_C_FLAGS_RELEASE
+CMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG -O2
 
-//Flags used by the C compiler during RELWITHDEBINFO builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
-
-//Path to a program.
-CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
+//Emscripten-overridden CMAKE_C_FLAGS_RELWITHDEBINFO
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-DNDEBUG -O2
 
 //Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
@@ -245,17 +260,17 @@ CMAKE_EXE_LINKER_FLAGS:STRING=
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during MINSIZEREL builds.
-CMAKE_EXE_LINKER_FLAGS_MINSIZEREL:STRING=
+//Emscripten-overridden CMAKE_EXE_LINKER_FLAGS_MINSIZEREL
+CMAKE_EXE_LINKER_FLAGS_MINSIZEREL:STRING=-Os
 
-//Flags used by the linker during RELEASE builds.
-CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
+//Emscripten-overridden CMAKE_EXE_LINKER_FLAGS_RELEASE
+CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=-O2
 
-//Flags used by the linker during RELWITHDEBINFO builds.
-CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+//Emscripten-overridden CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
 
 //Enable/Disable output of compile commands during generation.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -312,7 +327,7 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
 
 //Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/gmake
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/make
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -322,17 +337,17 @@ CMAKE_MODULE_LINKER_FLAGS:STRING=
 // DEBUG builds.
 CMAKE_MODULE_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during the creation of modules during
-// MINSIZEREL builds.
-CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=
+//Emscripten-overridden CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL
+CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=-Os
 
-//Flags used by the linker during the creation of modules during
-// RELEASE builds.
-CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
+//Emscripten-overridden CMAKE_MODULE_LINKER_FLAGS_RELEASE
+CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=-O2
 
-//Flags used by the linker during the creation of modules during
-// RELWITHDEBINFO builds.
-CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+//Emscripten-overridden CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
+
+//Path to a program.
+CMAKE_NM:FILEPATH=/usr/bin/nm
 
 //Path to a program.
 CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
@@ -349,8 +364,8 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=OpenCV
 
-//Path to a program.
-CMAKE_READELF:FILEPATH=/usr/bin/readelf
+//Emscripten ranlib
+CMAKE_RANLIB:FILEPATH=/emsdk/upstream/emscripten/emranlib
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -360,17 +375,14 @@ CMAKE_SHARED_LINKER_FLAGS:STRING=
 // during DEBUG builds.
 CMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during the creation of shared libraries
-// during MINSIZEREL builds.
-CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=
+//Emscripten-overridden CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL
+CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=-Os
 
-//Flags used by the linker during the creation of shared libraries
-// during RELEASE builds.
-CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=
+//Emscripten-overridden CMAKE_SHARED_LINKER_FLAGS_RELEASE
+CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=-O2
 
-//Flags used by the linker during the creation of shared libraries
-// during RELWITHDEBINFO builds.
-CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+//Emscripten-overridden CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
 
 //If set, runtime paths are not added when installing shared libraries,
 // but are added when building.
@@ -402,8 +414,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
+//The CMake toolchain file
+CMAKE_TOOLCHAIN_FILE:FILEPATH=/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -482,6 +494,9 @@ DNN_ENABLE_PLUGINS:BOOL=OFF
 // or special value 'all')
 DNN_PLUGIN_LIST:STRING=
 
+//If true, we are targeting Emscripten output.
+EMSCRIPTEN:BOOL=1
+
 //Force C/C++ compiler
 EMSCRIPTEN_FORCE_COMPILERS:BOOL=ON
 
@@ -490,7 +505,7 @@ EMSCRIPTEN_FORCE_COMPILERS:BOOL=ON
 EMSCRIPTEN_GENERATE_BITCODE_STATIC_LIBRARIES:BOOL=OFF
 
 //Location of Emscripten SDK
-EMSCRIPTEN_INCLUDE_DIR:PATH=/emsdk/upstream/emscripten/cache/sysroot/include
+EMSCRIPTEN_INCLUDE_DIR:PATH=/emsdk/upstream/emscripten/system/include
 
 //Enable hardening of the resulting binaries (against security
 // attacks, detects memory corruption, etc)
@@ -559,7 +574,7 @@ INSTALL_PYTHON_EXAMPLES:BOOL=OFF
 INSTALL_TESTS:BOOL=OFF
 
 //Path to a program.
-NODE_JS_EXECUTABLE:FILEPATH=/emsdk/node/18.20.3_64bit/bin/node
+NODE_JS_EXECUTABLE:FILEPATH=/emsdk/node/12.18.1_64bit/bin/node
 
 //Use Orbbec SDK as backend to support more camera models and platforms
 // (force to ON on MacOS)
@@ -654,7 +669,7 @@ OPENCV_TEST_DNN_TFLITE:BOOL=ON
 OPENCV_TEST_DNN_TIMVX:BOOL=OFF
 
 //Timestamp of OpenCV build configuration
-OPENCV_TIMESTAMP:STRING=2024-10-09T02:58:59Z
+OPENCV_TIMESTAMP:STRING=2024-10-09T08:17:05Z
 
 //Treat warnings as errors
 OPENCV_WARNINGS_ARE_ERRORS:BOOL=OFF
@@ -672,9 +687,6 @@ OpenCV_BINARY_DIR:STATIC=/src/build_js
 OpenCV_HAL_DIR:PATH=OpenCV_HAL_DIR-NOTFOUND
 
 //Value Computed by CMake
-OpenCV_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
 OpenCV_SOURCE_DIR:STATIC=/src
 
 //The directory containing a CMake configuration file for OpenJPEG.
@@ -682,9 +694,6 @@ OpenJPEG_DIR:PATH=OpenJPEG_DIR-NOTFOUND
 
 //Allow building parallel plugin support
 PARALLEL_ENABLE_PLUGINS:BOOL=OFF
-
-//Arguments to supply to pkg-config
-PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
@@ -715,7 +724,7 @@ PYTHON3_LIMITED_API:BOOL=OFF
 PYTHON3_NUMPY_INCLUDE_DIRS:PATH=
 
 //Where to install the python packages.
-PYTHON3_PACKAGES_PATH:STRING=lib/python3.10/dist-packages
+PYTHON3_PACKAGES_PATH:STRING=lib/python3.7/site-packages
 
 //No help, variable specified on the command line.
 PYTHON_DEFAULT_EXECUTABLE:UNINITIALIZED=/usr/bin/python3
@@ -947,16 +956,10 @@ libopenjp2_LIB_DEPENDS:STATIC=general;m;
 libprotobuf_BINARY_DIR:STATIC=/src/build_js/3rdparty/protobuf
 
 //Value Computed by CMake
-libprotobuf_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 libprotobuf_SOURCE_DIR:STATIC=/src/3rdparty/protobuf
 
 //Value Computed by CMake
 opencv_calib3d_BINARY_DIR:STATIC=/src/build_js/modules/calib3d
-
-//Value Computed by CMake
-opencv_calib3d_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
 opencv_calib3d_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_flann;general;opencv_imgproc;general;opencv_features2d;
@@ -967,9 +970,6 @@ opencv_calib3d_SOURCE_DIR:STATIC=/src/modules/calib3d
 //Value Computed by CMake
 opencv_core_BINARY_DIR:STATIC=/src/build_js/modules/core
 
-//Value Computed by CMake
-opencv_core_IS_TOP_LEVEL:STATIC=OFF
-
 //Dependencies for the target
 opencv_core_LIB_DEPENDS:STATIC=general;zlib;
 
@@ -978,9 +978,6 @@ opencv_core_SOURCE_DIR:STATIC=/src/modules/core
 
 //Value Computed by CMake
 opencv_dnn_BINARY_DIR:STATIC=/src/build_js/modules/dnn
-
-//Value Computed by CMake
-opencv_dnn_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
 opencv_dnn_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_imgproc;general;libprotobuf;
@@ -991,9 +988,6 @@ opencv_dnn_SOURCE_DIR:STATIC=/src/modules/dnn
 //Value Computed by CMake
 opencv_features2d_BINARY_DIR:STATIC=/src/build_js/modules/features2d
 
-//Value Computed by CMake
-opencv_features2d_IS_TOP_LEVEL:STATIC=OFF
-
 //Dependencies for the target
 opencv_features2d_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_flann;general;opencv_imgproc;
 
@@ -1003,9 +997,6 @@ opencv_features2d_SOURCE_DIR:STATIC=/src/modules/features2d
 //Value Computed by CMake
 opencv_flann_BINARY_DIR:STATIC=/src/build_js/modules/flann
 
-//Value Computed by CMake
-opencv_flann_IS_TOP_LEVEL:STATIC=OFF
-
 //Dependencies for the target
 opencv_flann_LIB_DEPENDS:STATIC=general;opencv_core;
 
@@ -1014,9 +1005,6 @@ opencv_flann_SOURCE_DIR:STATIC=/src/modules/flann
 
 //Value Computed by CMake
 opencv_imgproc_BINARY_DIR:STATIC=/src/build_js/modules/imgproc
-
-//Value Computed by CMake
-opencv_imgproc_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
 opencv_imgproc_LIB_DEPENDS:STATIC=general;opencv_core;
@@ -1028,16 +1016,10 @@ opencv_imgproc_SOURCE_DIR:STATIC=/src/modules/imgproc
 opencv_java_bindings_generator_BINARY_DIR:STATIC=/src/build_js/modules/java_bindings_generator
 
 //Value Computed by CMake
-opencv_java_bindings_generator_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 opencv_java_bindings_generator_SOURCE_DIR:STATIC=/src/modules/java/generator
 
 //Value Computed by CMake
 opencv_js_BINARY_DIR:STATIC=/src/build_js/modules/js
-
-//Value Computed by CMake
-opencv_js_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 opencv_js_SOURCE_DIR:STATIC=/src/modules/js
@@ -1046,25 +1028,16 @@ opencv_js_SOURCE_DIR:STATIC=/src/modules/js
 opencv_js_bindings_generator_BINARY_DIR:STATIC=/src/build_js/modules/js_bindings_generator
 
 //Value Computed by CMake
-opencv_js_bindings_generator_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 opencv_js_bindings_generator_SOURCE_DIR:STATIC=/src/modules/js/generator
 
 //Value Computed by CMake
 opencv_objc_bindings_generator_BINARY_DIR:STATIC=/src/build_js/modules/objc_bindings_generator
 
 //Value Computed by CMake
-opencv_objc_bindings_generator_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 opencv_objc_bindings_generator_SOURCE_DIR:STATIC=/src/modules/objc/generator
 
 //Value Computed by CMake
 opencv_objdetect_BINARY_DIR:STATIC=/src/build_js/modules/objdetect
-
-//Value Computed by CMake
-opencv_objdetect_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
 opencv_objdetect_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_flann;general;opencv_imgproc;general;opencv_dnn;general;opencv_features2d;general;opencv_calib3d;
@@ -1074,9 +1047,6 @@ opencv_objdetect_SOURCE_DIR:STATIC=/src/modules/objdetect
 
 //Value Computed by CMake
 opencv_photo_BINARY_DIR:STATIC=/src/build_js/modules/photo
-
-//Value Computed by CMake
-opencv_photo_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
 opencv_photo_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_imgproc;
@@ -1088,25 +1058,16 @@ opencv_photo_SOURCE_DIR:STATIC=/src/modules/photo
 opencv_python_bindings_generator_BINARY_DIR:STATIC=/src/build_js/modules/python_bindings_generator
 
 //Value Computed by CMake
-opencv_python_bindings_generator_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 opencv_python_bindings_generator_SOURCE_DIR:STATIC=/src/modules/python/bindings
 
 //Value Computed by CMake
 opencv_python_tests_BINARY_DIR:STATIC=/src/build_js/modules/python_tests
 
 //Value Computed by CMake
-opencv_python_tests_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 opencv_python_tests_SOURCE_DIR:STATIC=/src/modules/python/test
 
 //Value Computed by CMake
 opencv_video_BINARY_DIR:STATIC=/src/build_js/modules/video
-
-//Value Computed by CMake
-opencv_video_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
 opencv_video_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_flann;general;opencv_imgproc;general;opencv_dnn;general;opencv_features2d;general;opencv_calib3d;
@@ -1118,16 +1079,10 @@ opencv_video_SOURCE_DIR:STATIC=/src/modules/video
 openjpeg_BINARY_DIR:STATIC=/src/build_js/3rdparty/openjpeg
 
 //Value Computed by CMake
-openjpeg_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
 openjpeg_SOURCE_DIR:STATIC=/src/3rdparty/openjpeg
 
 //Value Computed by CMake
 zlib_BINARY_DIR:STATIC=/src/build_js/3rdparty/zlib
-
-//Value Computed by CMake
-zlib_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 zlib_SOURCE_DIR:STATIC=/src/3rdparty/zlib
@@ -1138,8 +1093,8 @@ zlib_SOURCE_DIR:STATIC=/src/3rdparty/zlib
 ########################
 
 CACHED_CPU_BASELINE_FLAGS:INTERNAL=' -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winconsistent-missing-override -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -Wno-deprecated-enum-enum-conversion -Wno-deprecated-anon-enum-enum-conversion -fdiagnostics-show-option -Qunused-arguments -ffunction-sections -fdata-sections '
-//ADVANCED property for variable: CMAKE_ADDR2LINE
-CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_AR
+CMAKE_AR-ADVANCED:INTERNAL=1
 //STRINGS property for variable: CMAKE_BUILD_TYPE
 CMAKE_BUILD_TYPE-STRINGS:INTERNAL=Debug;Release
 //This is the directory where this CMakeCache.txt was created
@@ -1147,9 +1102,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/src/build_js
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=22
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=13
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -1158,6 +1113,12 @@ CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
+//ADVANCED property for variable: CMAKE_CXX_COMPILER
+CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
+CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
+CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
 CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
@@ -1168,6 +1129,12 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_AR
+CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
+CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
@@ -1178,8 +1145,6 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_DLLTOOL
-CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -1202,8 +1167,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
-//Test CMAKE_HAVE_LIBC_PTHREAD
-CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
+//Have symbol pthread_create
+CMAKE_HAVE_LIBC_CREATE:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/src
@@ -1253,6 +1218,8 @@ CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_NM
+CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=59
 //ADVANCED property for variable: CMAKE_OBJCOPY
@@ -1261,10 +1228,10 @@ CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_READELF
-CMAKE_READELF-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_RANLIB
+CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.22
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.13
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -1292,7 +1259,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //uname command
-CMAKE_UNAME:INTERNAL=/usr/bin/uname
+CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_BINARY_DEB
@@ -1354,10 +1321,8 @@ CPU_SSSE3_USAGE_COUNT:INTERNAL=0
 DNN_ENABLE_PLUGINS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DNN_PLUGIN_LIST
 DNN_PLUGIN_LIST-ADVANCED:INTERNAL=1
-//If true, we are targeting Emscripten output.
-EMSCRIPTEN:INTERNAL=1
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.10.12(3.2)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.7.3(3.2)]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Have include assert.h
@@ -1521,7 +1486,7 @@ HAVE_C_WNON_VIRTUAL_DTOR:INTERNAL=1
 //Test HAVE_C_WNO_ATTRIBUTES
 HAVE_C_WNO_ATTRIBUTES:INTERNAL=1
 //Test HAVE_C_WNO_CAST_FUNCTION_TYPE
-HAVE_C_WNO_CAST_FUNCTION_TYPE:INTERNAL=1
+HAVE_C_WNO_CAST_FUNCTION_TYPE:INTERNAL=
 //Test HAVE_C_WNO_COMMENT
 HAVE_C_WNO_COMMENT:INTERNAL=1
 //Test HAVE_C_WNO_DELETE_NON_VIRTUAL_DTOR
@@ -1553,7 +1518,7 @@ HAVE_C_WNO_UNDEF:INTERNAL=1
 //Test HAVE_C_WNO_UNNAMED_TYPE_TEMPLATE_ARGS
 HAVE_C_WNO_UNNAMED_TYPE_TEMPLATE_ARGS:INTERNAL=1
 //Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE
-HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE:INTERNAL=1
+HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE:INTERNAL=
 //Test HAVE_C_WNO_UNUSED_FUNCTION
 HAVE_C_WNO_UNUSED_FUNCTION:INTERNAL=1
 //Test HAVE_C_WPOINTER_ARITH
@@ -2338,8 +2303,6 @@ OPJ_HAVE_STDINT_H:INTERNAL=1
 OPJ_HAVE__ALIGNED_MALLOC:INTERNAL=
 //List of OpenCVModules targets
 OpenCVModules_TARGETS:INTERNAL=zlib;libopenjp2;libprotobuf;opencv_core;opencv_flann;opencv_imgproc;opencv_photo;opencv_dnn;opencv_features2d;opencv_calib3d;opencv_objdetect;opencv_video
-//ADVANCED property for variable: PKG_CONFIG_ARGN
-PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 PYTHON3INTERP_FOUND:INTERNAL=TRUE
@@ -2351,8 +2314,8 @@ PYTHON3_INCLUDE_PATH:INTERNAL=
 PYTHON3_LIBRARIES:INTERNAL=
 PYTHON3_NUMPY_VERSION:INTERNAL=
 PYTHON3_VERSION_MAJOR:INTERNAL=3
-PYTHON3_VERSION_MINOR:INTERNAL=10
-PYTHON3_VERSION_STRING:INTERNAL=3.10.12
+PYTHON3_VERSION_MINOR:INTERNAL=7
+PYTHON3_VERSION_STRING:INTERNAL=3.7.3
 Protobuf_VERSION:INTERNAL=3.19.1
 //ADVANCED property for variable: VIDEOIO_ENABLE_PLUGINS
 VIDEOIO_ENABLE_PLUGINS-ADVANCED:INTERNAL=1
